@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class componentName extends Component {
+class LettersToNumbers extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,7 +9,9 @@ class componentName extends Component {
     };
   }
 
-  testFn = () => {};
+  testFn = () => {
+    
+  };
 
   handleChange = (key, value) => {
     this.setState({
@@ -24,7 +26,7 @@ class componentName extends Component {
   };
 
   render() {
-    const { vari } = this.state;
+    const {vari} = this.state
     return (
       <div>
         <p>Kata: </p>
@@ -48,17 +50,8 @@ class componentName extends Component {
   }
 }
 
-export default componentName;
+export default LettersToNumbers;
 
-{
-  /* 
-  <br />
-  <Link to = '/componentName'> 
+{/* <Link to = '/componentName'> 
 <button>componentName</button>
-</Link>
- */
-}
-
-{
-  /* <Route path = '/componentname' component = {componentName} /> */
-}
+</Link> */}

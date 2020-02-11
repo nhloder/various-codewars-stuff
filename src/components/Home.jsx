@@ -14,6 +14,10 @@ function Home() {
       <Link to="/isograms">
         <button>Isograms</button>
       </Link>
+      <br />
+      <Link to="/lettersToNumbers">
+        <button>Letters to Numbers</button>
+      </Link>
     </div>
   );
 }
