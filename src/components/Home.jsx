@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./App.css";
+import "../App.css";
 
 function Home() {
   return (
@@ -16,7 +16,7 @@ function Home() {
       </Link>
       <br />
       <Link to="/lettersToNumbers">
-        <button>Letters to Numbers</button>
+        <button>Alphabet Position</button>
       </Link>
     </div>
   );

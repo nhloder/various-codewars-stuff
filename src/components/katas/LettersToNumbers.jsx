@@ -5,12 +5,15 @@ class LettersToNumbers extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      vari: ""
+      text: "",
+      arr: [],
+      sentence: "",
+      toggle: false
     };
   }
 
-  testFn = () => {
-    
+  alphabetPosition = text => {
+    let { sentence, arr } = this.state;
   };
 
   handleChange = (key, value) => {
@@ -21,25 +24,50 @@ class LettersToNumbers extends Component {
 
   handleKeyPress = event => {
     if (event.key === "Enter") {
-      this.testFn(this.state.str);
+      this.alphabetPosition(this.state.text);
     }
   };
 
+  toggler = () => {
+    this.setState(prevState => {
+      return {toggle: !prevState.toggle}
+    });
+  };
+
   render() {
-    const {vari} = this.state
+    const { sentence, text, toggle } = this.state;
     return (
       <div>
-        <p>Kata: </p>
-        <h1> title </h1>
-        <h3> Description </h3>
+        <p>
+          Kata:
+          https://www.codewars.com/kata/546f922b54af40e1e90001da/train/javascript
+        </p>
+        <h1> Alphabet Position </h1>
+        <h3>
+          {" "}
+          Takes in a string and returns the number corresponding number in its
+          order of the alphabet. ignores punctuation.{" "}
+        </h3>
+        {!toggle ? (
+          <>
+            <span> Entry: {text} </span>
+          </>
+        ) : (
+          <>
+            <span> Output: {sentence} </span>
+          </>
+        )}
+        <br/>
         <input
           type="text"
-          onChange={e => this.handleChange("str", e.target.value)}
+          onChange={e => this.handleChange("text", e.target.value)}
           onKeyPress={this.handleKeyPress}
         />
         <br />
         <br />
-        <button onClick={() => this.testFn()}>Test</button>
+        <button onClick={(() => this.alphabetPosition(), this.toggler)}>
+          Test
+        </button>
         <br />
         <br />
         <Link to="/">
@@ -51,7 +79,3 @@ class LettersToNumbers extends Component {
 }
 
 export default LettersToNumbers;
-
-{/* <Link to = '/componentName'> 
-<button>componentName</button>
-</Link> */}
