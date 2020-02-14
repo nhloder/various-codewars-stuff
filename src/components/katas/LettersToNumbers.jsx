@@ -6,93 +6,75 @@ class LettersToNumbers extends Component {
     super(props);
     this.state = {
       text: "",
-      sentence: "",
+      sentence: [],
       toggle: false
     };
   }
 
   alphabetPosition = text => {
     let { sentence } = this.state;
-    for (let i = 0; i <= text.length; i++) {
-      if ((text[i] = "A" || "a")) {
-        sentence.push(`1, `);
-      }
-      if ((text[i] = "B" || "b")) {
-        sentence.push(`2, `);
-      }
-      if ((text[i] = "C" || "c")) {
-        sentence.push(`3, `);
-      }
-      if ((text[i] = "D" || "d")) {
-        sentence.push(`4, `);
-      }
-      if ((text[i] = "E" || "e")) {
-        sentence.push(`5, `);
-      }
-      if ((text[i] = "F" || "f")) {
-        sentence.push(`6, `);
-      }
-      if ((text[i] = "G" || "g")) {
-        sentence.push(`7, `);
-      }
-      if ((text[i] = "H" || "h")) {
-        sentence.push(`8, `);
-      }
-      if ((text[i] = "I" || "i")) {
-        sentence.push(`9, `);
-      }
-      if ((text[i] = "J" || "j")) {
-        sentence.push(`10, `);
-      }
-      if ((text[i] = "K" || "k")) {
-        sentence.push(`11, `);
-      }
-      if ((text[i] = "L" || "l")) {
-        sentence.push(`12, `);
-      }
-      if ((text[i] = "M" || "m")) {
-        sentence.push(`13, `);
-      }
-      if ((text[i] = "N" || "n")) {
-        sentence.push(`14, `);
-      }
-      if ((text[i] = "O" || "o")) {
-        sentence.push(`15, `);
-      }
-      if ((text[i] = "P" || "p")) {
-        sentence.push(`16, `);
-      }
-      if ((text[i] = "Q" || "q")) {
-        sentence.push(`17, `);
-      }
-      if ((text[i] = "R" || "r")) {
-        sentence.push(`18, `);
-      }
-      if ((text[i] = "S" || "s")) {
-        sentence.push(`19, `);
-      }
-      if ((text[i] = "T" || "t")) {
-        sentence.push(`20, `);
-      }
-      if ((text[i] = "U" || "u")) {
-        sentence.push(`21, `);
-      }
-      if ((text[i] = "V" || "v")) {
-        sentence.push(`22, `);
-      }
-      if ((text[i] = "W" || "w")) {
-        sentence.push(`23, `);
-      }
-      if ((text[i] = "X" || "x")) {
-        sentence.push(`24, `);
-      }
-      if ((text[i] = "Y" || "y")) {
-        sentence.push(`25, `);
-      }
-      if ((text[i] = "z" || "Z")) {
-        sentence.push(`26, `);
+    // console.log();
+    this.setState(prevState => {
+      return { toggle: !prevState.toggle };
+    });
+    for (let i = 0; i < text.length; i++) {
+      if (text[i].toUpperCase() === "A") {
+        sentence.push(`1 `);
+      } else if (text[i].toUpperCase() === "B") {
+        sentence.push(`2 `);
+      } else if (text[i].toUpperCase() === "C") {
+        sentence.push(`3 `);
+      } else if (text[i].toUpperCase() === "D") {
+        sentence.push(`4 `);
+      } else if (text[i].toUpperCase() === "E") {
+        sentence.push(`5 `);
+      } else if (text[i].toUpperCase() === "F") {
+        sentence.push(`6 `);
+      } else if (text[i].toUpperCase() === "G") {
+        sentence.push(`7 `);
+      } else if (text[i].toUpperCase() === "H") {
+        sentence.push(`8 `);
+      } else if (text[i].toUpperCase() === "I") {
+        sentence.push(`9 `);
+      } else if (text[i].toUpperCase() === "J") {
+        sentence.push(`10 `);
+      } else if (text[i].toUpperCase() === "K") {
+        sentence.push(`11 `);
+      } else if (text[i].toUpperCase() === "L") {
+        sentence.push(`12 `);
+      } else if (text[i].toUpperCase() === "M") {
+        sentence.push(`13 `);
+      } else if (text[i].toUpperCase() === "N") {
+        sentence.push(`14 `);
+      } else if (text[i].toUpperCase() === "O") {
+        sentence.push(`15 `);
+      } else if (text[i].toUpperCase() === "P") {
+        sentence.push(`16 `);
+      } else if (text[i].toUpperCase() === "Q") {
+        sentence.push(`17 `);
+      } else if (text[i].toUpperCase() === "R") {
+        sentence.push(`18 `);
+      } else if (text[i].toUpperCase() === "S") {
+        sentence.push(`19 `);
+      } else if (text[i].toUpperCase() === "T") {
+        sentence.push(`20 `);
+      } else if (text[i].toUpperCase() === "U") {
+        sentence.push(`21 `);
+      } else if (text[i].toUpperCase() === "V") {
+        sentence.push(`22 `);
+      } else if (text[i].toUpperCase() === "W") {
+        sentence.push(`23 `);
+      } else if (text[i].toUpperCase() === "X") {
+        sentence.push(`24 `);
+      } else if (text[i].toUpperCase() === "Y") {
+        sentence.push(`25 `);
+      } else if (text[i].toUpperCase() === "Z") {
+        sentence.push(`26 `);
+      } else {
+        sentence.push(`${text[i]} `);
       }
     }
+    console.log("sentence", sentence);
   };
 
   handleChange = (key, value) => {
@@ -144,7 +126,7 @@ class LettersToNumbers extends Component {
         />
         <br />
         <br />
-        <button onClick={(() => this.alphabetPosition(text), this.toggler)}>
+        <button onClick={() => this.alphabetPosition(this.state.text)}>
           Test
         </button>
         <br />
@@ -158,3 +140,63 @@ class LettersToNumbers extends Component {
 }
 
 export default LettersToNumbers;
+
+//! Actual input code below
+// alphabetPosition = text => {
+//   let sentence = [];
+//   for (let i = 0; i < text.length; i++) {
+//     if (text[i].toUpperCase() === "A") {
+//       sentence.push(`1 `);
+//     } else if (text[i].toUpperCase() === "B") {
+//       sentence.push(`2 `);
+//     } else if (text[i].toUpperCase() === "C") {
+//       sentence.push(`3 `);
+//     } else if (text[i].toUpperCase() === "D") {
+//       sentence.push(`4 `);
+//     } else if (text[i].toUpperCase() === "E") {
+//       sentence.push(`5 `);
+//     } else if (text[i].toUpperCase() === "F") {
+//       sentence.push(`6 `);
+//     } else if (text[i].toUpperCase() === "G") {
+//       sentence.push(`7 `);
+//     } else if (text[i].toUpperCase() === "H") {
+//       sentence.push(`8 `);
+//     } else if (text[i].toUpperCase() === "I") {
+//       sentence.push(`9 `);
+//     } else if (text[i].toUpperCase() === "J") {
+//       sentence.push(`10 `);
+//     } else if (text[i].toUpperCase() === "K") {
+//       sentence.push(`11 `);
+//     } else if (text[i].toUpperCase() === "L") {
+//       sentence.push(`12 `);
+//     } else if (text[i].toUpperCase() === "M") {
+//       sentence.push(`13 `);
+//     } else if (text[i].toUpperCase() === "N") {
+//       sentence.push(`14 `);
+//     } else if (text[i].toUpperCase() === "O") {
+//       sentence.push(`15 `);
+//     } else if (text[i].toUpperCase() === "P") {
+//       sentence.push(`16 `);
+//     } else if (text[i].toUpperCase() === "Q") {
+//       sentence.push(`17 `);
+//     } else if (text[i].toUpperCase() === "R") {
+//       sentence.push(`18 `);
+//     } else if (text[i].toUpperCase() === "S") {
+//       sentence.push(`19 `);
+//     } else if (text[i].toUpperCase() === "T") {
+//       sentence.push(`20 `);
+//     } else if (text[i].toUpperCase() === "U") {
+//       sentence.push(`21 `);
+//     } else if (text[i].toUpperCase() === "V") {
+//       sentence.push(`22 `);
+//     } else if (text[i].toUpperCase() === "W") {
+//       sentence.push(`23 `);
+//     } else if (text[i].toUpperCase() === "X") {
+//       sentence.push(`24 `);
+//     } else if (text[i].toUpperCase() === "Y") {
+//       sentence.push(`25 `);
+//     } else if (text[i].toUpperCase() === "Z") {
+//       sentence.push(`26 `);
+//     }
+//   }
+//   return sentence.join('').slice(0, -1)
