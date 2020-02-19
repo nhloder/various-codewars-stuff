@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Isograms from "./components/katas/Isograms";
 import Grades from './components/katas/Grades';
 import LettersToNumbers from './components/katas/LettersToNumbers';
+import SquareDigits from './components/katas/SquareDigits'
 
 export default (
   <Switch>
@@ -11,5 +12,6 @@ export default (
     <Route path="/isograms" component={Isograms} />
     <Route path = '/grades' component = {Grades} />
     <Route path = '/lettersToNumbers' component = {LettersToNumbers} />
+    <Route path = '/squareDigits' component = {SquareDigits} />
   </Switch>
 );

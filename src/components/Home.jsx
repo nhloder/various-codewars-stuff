@@ -18,6 +18,10 @@ function Home() {
       <Link to="/lettersToNumbers">
         <button>Alphabet Position</button>
       </Link>
+      <br />
+  <Link to = '/squareDigits'> 
+<button>Square Every Digit</button>
+</Link>
     </div>
   );
 }
