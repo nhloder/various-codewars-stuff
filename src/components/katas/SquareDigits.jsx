@@ -6,13 +6,22 @@ class squareDigits extends Component {
     super(props);
     this.state = {
       num: 0,
-      arr: [],
-      toggle: false
+      result: 0
     };
   }
 
   squareDigits = num => {
-    //may the code be with you
+    let number = num.toString()
+    let arr = []
+    for (let i = 0; i < number.length; i++) {
+      arr.push(Math.pow(number[i], 2));
+    }
+    let res = parseInt(arr.join(''))
+console.log(res);
+
+    this.setState({
+      result: res
+    })
   };
 
   handleChange = (key, value) => {
@@ -26,15 +35,9 @@ class squareDigits extends Component {
       this.squareDigits(this.state.num);
     }
   };
-  
-  toggler = () => {
-    this.setState(prevState => {
-      return { toggle: !prevState.toggle };
-    });
-  };
 
   render() {
-    const { num, arr, toggle } = this.state;
+    const { num, result } = this.state;
     return (
       <div>
         <p>
@@ -47,13 +50,15 @@ class squareDigits extends Component {
           Takes every digit and returns a number where every digit of the first
           number has been replaced by it's Square{" "}
         </h3>
-        {!toggle ? (
+        {!result ? (
           <>
             <span> Entry: {num}</span>
+            <br />
           </>
         ) : (
           <>
-            <span> Entry: {arr}</span>
+            <span> output: {result}</span>
+            <br />
           </>
         )}
         <input
