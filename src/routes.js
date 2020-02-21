@@ -5,6 +5,7 @@ import Isograms from "./components/katas/Isograms";
 import Grades from './components/katas/Grades';
 import LettersToNumbers from './components/katas/LettersToNumbers';
 import SquareDigits from './components/katas/SquareDigits'
+import Narcissism from './components/katas/Narcissistic';
 
 export default (
   <Switch>
@@ -13,5 +14,6 @@ export default (
     <Route path = '/grades' component = {Grades} />
     <Route path = '/lettersToNumbers' component = {LettersToNumbers} />
     <Route path = '/squareDigits' component = {SquareDigits} />
+    <Route path = '/narcissism' component = {Narcissism} /> 
   </Switch>
 );

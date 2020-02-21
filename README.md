@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 This Repo is mostly just practice for me, but if you wanna look at it go ahead. 
 
 ## By the Way

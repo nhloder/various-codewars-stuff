@@ -19,9 +19,13 @@ function Home() {
         <button>Alphabet Position</button>
       </Link>
       <br />
-  <Link to = '/squareDigits'> 
-<button>Square Every Digit</button>
-</Link>
+      <Link to="/squareDigits">
+        <button>Square Every Digit</button>
+      </Link>
+      <br />
+      <Link to="/narcissism">
+        <button>Narcissism</button>
+      </Link>
     </div>
   );
 }
