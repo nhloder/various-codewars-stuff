@@ -6,23 +6,29 @@ class WordSpinner extends Component {
     super(props);
     this.state = {
       str: "",
-      finish: ''
+      finish: ""
     };
   }
 
-  spinWords = (str) => {
-    let arr = str.split(' ');
-    console.log('arr', arr);
-    let fin = []
-    for (let i = 0; i < arr.length; i++){
-      if (arr[i].length < 5){
-        fin.push(arr[i])
-      }
-      else if (arr[i].length >= 5){
-        fin.push(arr[i].split('').reverse().join(''))
+  spinWords = str => {
+    let arr = str.split(" ");
+    // console.log("arr", arr);
+    let fin = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].length < 5) {
+        fin.push(arr[i]);
+      } else if (arr[i].length >= 5) {
+        fin.push(
+          arr[i]
+            .split("")
+            .reverse()
+            .join("")
+        );
       }
     }
-    return fin.join(' ')
+    this.setState({
+      finish: fin.join(" ")
+    });
   };
 
   handleChange = (key, value) => {
@@ -38,12 +44,26 @@ class WordSpinner extends Component {
   };
 
   render() {
-    const { str } = this.state;
+    const { str, finish } = this.state;
     return (
       <div>
-        <p>Kata: https://www.codewars.com/kata/5264d2b162488dc400000001/train/javascript</p>
+        <p>
+          Kata:
+          https://www.codewars.com/kata/5264d2b162488dc400000001/train/javascript
+        </p>
         <h1> Stop gninnipS My sdroW! </h1>
-        <h3> Takes in a string of words, and returns the same string, but with all five or more letter words are reversed </h3>
+        <h3>
+          {" "}
+          Takes in a string of words, and returns the same string, but all
+          five or more letter words are reversed{" "}
+        </h3>
+        {finish ? 
+        <>
+        <span>Output: {finish} </span> 
+        <br/>
+        </>
+        : null
+        }
         <input
           type="text"
           onChange={e => this.handleChange("str", e.target.value)}
