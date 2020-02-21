@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class componentName extends Component {
+class HighScore extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      vari: ""
+      x: ""
     };
   }
 
-  testFn = (vari) => {};
+  high = (x) => {};
 
   handleChange = (key, value) => {
     this.setState({
@@ -19,12 +19,12 @@ class componentName extends Component {
 
   handleKeyPress = event => {
     if (event.key === "Enter") {
-      this.testFn(this.state.vari);
+      this.high(this.state.x);
     }
   };
 
   render() {
-    const { vari } = this.state;
+    const { x } = this.state;
     return (
       <div>
         <p>Kata: </p>
@@ -32,12 +32,12 @@ class componentName extends Component {
         <h3> Description </h3>
         <input
           type="text"
-          onChange={e => this.handleChange("vari", e.target.value)}
+          onChange={e => this.handleChange("x", e.target.value)}
           onKeyPress={this.handleKeyPress}
         />
         <br />
         <br />
-        <button onClick={() => this.testFn(vari)}>Test</button>
+        <button onClick={() => this.high(x)}>Test</button>
         <br />
         <br />
         <Link to="/">
@@ -48,17 +48,4 @@ class componentName extends Component {
   }
 }
 
-export default componentName;
-
-{
-  /* 
-  <br />
-  <Link to = '/componentName'> 
-<button>componentName</button>
-</Link>
- */
-}
-
-{
-  /* <Route path = '/componentname' component = {componentName} /> */
-}
+export default HighScore;

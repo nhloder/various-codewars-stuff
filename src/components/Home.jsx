@@ -28,7 +28,11 @@ function Home() {
       </Link>
       <br />
       <Link to="/wordSpinner">
-        <button>WordSpinner</button>
+        <button>Word Spinner</button>
+      </Link>
+      <br />
+      <Link to="/highScore">
+        <button>High Score</button>
       </Link>
     </div>
   );
