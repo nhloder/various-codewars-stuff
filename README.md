@@ -1,4 +1,4 @@
-This Repo is mostly just practice for me, but if you wanna look at it go ahead. 
+This Repo is mostly just practice for me, but if you wanna look at it go ahead.
 
 ## By the Way
 
