@@ -9,7 +9,15 @@ class Narcissism extends Component {
     };
   }
 
-  narcissistic = (val) => {};
+  narcissistic = (val) => {
+    let value = val.toString()
+    let power = (val.toString().length + 1);
+    let arr = []
+    for (let i = 0; i < value.length;i++){
+      arr.push(value[i])
+    }
+    //thats not it this needs to be scraped and finish
+  };
 
   handleChange = (key, value) => {
     this.setState({
