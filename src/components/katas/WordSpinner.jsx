@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class componentName extends Component {
+class WordSpinner extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      vari: ""
+      str: "",
+      arr: [],
+      fin: ''
     };
   }
 
-  testFn = () => {};
+  spinWords = (str) => {};
 
   handleChange = (key, value) => {
     this.setState({
@@ -19,12 +21,12 @@ class componentName extends Component {
 
   handleKeyPress = event => {
     if (event.key === "Enter") {
-      this.testFn(this.state.vari);
+      this.spinWords(this.state.str);
     }
   };
 
   render() {
-    const { vari } = this.state;
+    const { str } = this.state;
     return (
       <div>
         <p>Kata: </p>
@@ -32,12 +34,12 @@ class componentName extends Component {
         <h3> Description </h3>
         <input
           type="text"
-          onChange={e => this.handleChange("vari", e.target.value)}
+          onChange={e => this.handleChange("str", e.target.value)}
           onKeyPress={this.handleKeyPress}
         />
         <br />
         <br />
-        <button onClick={() => this.testFn()}>Test</button>
+        <button onClick={() => this.spinWords(str)}>Test</button>
         <br />
         <br />
         <Link to="/">
@@ -48,17 +50,4 @@ class componentName extends Component {
   }
 }
 
-export default componentName;
-
-{
-  /* 
-  <br />
-  <Link to = '/componentName'> 
-<button>componentName</button>
-</Link>
- */
-}
-
-{
-  /* <Route path = '/componentname' component = {componentName} /> */
-}
+export default WordSpinner;

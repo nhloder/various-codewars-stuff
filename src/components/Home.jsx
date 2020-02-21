@@ -26,6 +26,10 @@ function Home() {
       <Link to="/narcissism">
         <button>Narcissism</button>
       </Link>
+      <br />
+      <Link to="/wordSpinner">
+        <button>WordSpinner</button>
+      </Link>
     </div>
   );
 }

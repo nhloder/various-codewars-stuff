@@ -6,6 +6,7 @@ import Grades from './components/katas/Grades';
 import LettersToNumbers from './components/katas/LettersToNumbers';
 import SquareDigits from './components/katas/SquareDigits'
 import Narcissism from './components/katas/Narcissistic';
+import WordSpinner from "./components/katas/WordSpinner";
 
 export default (
   <Switch>
@@ -15,5 +16,6 @@ export default (
     <Route path = '/lettersToNumbers' component = {LettersToNumbers} />
     <Route path = '/squareDigits' component = {SquareDigits} />
     <Route path = '/narcissism' component = {Narcissism} /> 
+    <Route path = '/wordSpinner' component = {WordSpinner} />
   </Switch>
 );
