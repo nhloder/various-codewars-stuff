@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import './Recipe.css'
 
 class componentName extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      vari: ""
+      recipe: {},
+      available: {}
     };
   }
 
-  testFn = (vari) => {};
+  cakes = () => {
+    const {recipe, available} = this.state
+  };
 
   handleChange = (key, value) => {
     this.setState({
@@ -19,17 +23,24 @@ class componentName extends Component {
 
   handleKeyPress = event => {
     if (event.key === "Enter") {
-      this.testFn(this.state.vari);
+      this.cakes(this.state.vari);
     }
   };
 
   render() {
-    const { vari } = this.state;
+    const { recipe, available } = this.state;
     return (
       <div>
+        <div className="titleBox"></div>
         <p>Kata: https://www.codewars.com/kata/525c65e51bf619685c000059/train/javascript</p>
-        <h1> title </h1>
-        <h3> Description </h3>
+        <h1> Pete, the baker </h1>
+        <h3> Pete likes to bake some cakes. He has some recipes and ingredients. Unfortunately he is not good at math. Can you help him find out how many cakes he could bake considering his recipes? </h3>
+        <div className="inputBox">
+          <div className="leftBox">
+
+          </div>
+          <div className="rightBox"></div>
+        </div>
         <input
           type="text"
           onChange={e => this.handleChange("vari", e.target.value)}
@@ -37,7 +48,7 @@ class componentName extends Component {
         />
         <br />
         <br />
-        <button onClick={() => this.testFn(vari)}>Test</button>
+        <button onClick={() => this.cakes()}>Test</button>
         <br />
         <br />
         <Link to="/">
