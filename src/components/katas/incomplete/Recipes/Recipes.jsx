@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import './Recipe.css'
+import './Recipes.css'
 
-class componentName extends Component {
+class Recipes extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,7 +34,7 @@ class componentName extends Component {
         <div className="titleBox"></div>
         <p>Kata: https://www.codewars.com/kata/525c65e51bf619685c000059/train/javascript</p>
         <h1> Pete, the baker </h1>
-        <h3> Pete likes to bake some cakes. He has some recipes and ingredients. Unfortunately he is not good at math. Can you help him find out how many cakes he could bake considering his recipes? </h3>
+        <h3> Takes in two objects, a Recipe, and a list of available resources </h3>
         <div className="inputBox">
           <div className="leftBox">
 
@@ -59,4 +59,4 @@ class componentName extends Component {
   }
 }
 
-export default componentName;
+export default Recipes;

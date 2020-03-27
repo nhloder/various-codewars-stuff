@@ -34,6 +34,12 @@ function Home() {
       <Link to="/recipes">
         <button>Recipes</button>
       </Link>
+      <br />
+      <Link
+        to="/MorseDecoder"
+      >
+        <button> Morse Decoder </button>
+      </Link>
     </div>
   );
 }

@@ -7,7 +7,8 @@ import LettersToNumbers from './components/katas/complete/LettersToNumbers';
 import SquareDigits from './components/katas/complete/SquareDigits'
 import Narcissism from './components/katas/complete/Narcissistic';
 import WordSpinner from './components/katas/complete/WordSpinner';
-import Recipes from './components/katas/incomplete/Recipes';
+import Recipes from './components/katas/incomplete/Recipes/Recipes';
+import MorseDecoder from './components/katas/incomplete/MorseCode';
 
 export default (
   <Switch>
@@ -19,5 +20,6 @@ export default (
     <Route path = '/narcissism' component = {Narcissism} /> 
     <Route path = '/wordSpinner' component = {WordSpinner} />
     <Route path = '/recipes' component = {Recipes} />
+    <Route path = '/morse' component = {MorseDecoder} />
   </Switch>
 );
