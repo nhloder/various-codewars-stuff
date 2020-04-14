@@ -8,15 +8,29 @@ class MiddleEarth extends Component {
     this.state = {
       good: [],
       evil: [],
+      res: "",
     };
   }
 
   goodVsEvil = () => {
     const { good, evil } = this.state;
+    let goodVal = good.reduce((a, b) => a + b, 0);
+    let evilVal = evil.reduce((a, b) => a + b, 0);
+    console.log("goodVal", goodVal);
+    console.log("evilVal", evilVal);
+    
+    
   };
 
   handleGood = (e) => {
-    this.state.good.push(e);
+    if (!e) {
+      let val = 0;
+      this.state.good.push(val);
+    } else if (e) {
+      let val = e;
+      this.state.good.push(val);
+    }
+    console.log(this.state.good);
   };
 
   handleKeyPress = (event) => {
@@ -26,7 +40,7 @@ class MiddleEarth extends Component {
   };
 
   render() {
-    const { good, evil } = this.state;
+    const { good, evil, res } = this.state;
     return (
       <div>
         <div className="topbit-gve">
@@ -56,34 +70,64 @@ class MiddleEarth extends Component {
             side of good, followed by the count of each of the races on the side
             of evil, determine which side wins.
           </h3>
-          <h2> {} </h2>
+          <h2> {res ? res : null} </h2>
         </div>
         <div className="contentBox-gve">
           <div className="box-left-gve">
             <h4> Good </h4>
             <p>
               {" "}
-              Hobbits <input type="number" placeholder="Hobbits" />{" "}
+              Hobbits{" "}
+              <input
+                type="number"
+                placeholder="Hobbits"
+                onFocusChange={(e) => this.handleGood(e.target.value)}
+              />{" "}
             </p>
             <p>
               {" "}
-              Men <input type="number" placeholder="Men" />{" "}
+              Men{" "}
+              <input
+                type="number"
+                placeholder="Men"
+                onFocusChange={(e) => this.handleGood(e.target.value)}
+              />{" "}
             </p>
             <p>
               {" "}
-              Elves <input type="number" placeholder="Elves" />{" "}
+              Elves{" "}
+              <input
+                type="number"
+                placeholder="Elves"
+                onFocusChange={(e) => this.handleGood(e.target.value)}
+              />{" "}
             </p>
             <p>
               {" "}
-              Dwarves <input type="number" placeholder="Dwarves" />{" "}
+              Dwarves{" "}
+              <input
+                type="number"
+                placeholder="Dwarves"
+                onFocusChange={(e) => this.handleGood(e.target.value)}
+              />{" "}
             </p>
             <p>
               {" "}
-              Eagles <input type="number" placeholder="Eagles" />{" "}
+              Eagles{" "}
+              <input
+                type="number"
+                placeholder="Eagles"
+                onFocusChange={(e) => this.handleGood(e.target.value)}
+              />{" "}
             </p>
             <p>
               {" "}
-              Wizards <input type="number" placeholder="Wizards" />{" "}
+              Wizards{" "}
+              <input
+                type="number"
+                placeholder="Wizards"
+                onFocusChange={(e) => this.handleGood(e.target.value)}
+              />{" "}
             </p>
           </div>
           <div className="box-right-gve">
