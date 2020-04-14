@@ -30,14 +30,12 @@ function Home() {
       <Link to="/wordSpinner">
         <button>Word Spinner</button>
       </Link>
-      <br />
-      <Link to="/recipes">
-        <button>Recipes</button>
+      <br/>
+      <Link to="/MiddleEarth">
+        <button>Middle Earth</button>
       </Link>
       <br />
-      <Link
-        to="/MorseDecoder"
-      >
+      <Link to="/MorseDecoder">
         <button> Morse Decoder </button>
       </Link>
     </div>

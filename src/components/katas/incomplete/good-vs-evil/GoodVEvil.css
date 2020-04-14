@@ -1,0 +1,11 @@
+.contentBox-gve{
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+.box-left-gve{
+  width: 50%;
+}
+.box-right-gve{
+  width: 50%;
+}
