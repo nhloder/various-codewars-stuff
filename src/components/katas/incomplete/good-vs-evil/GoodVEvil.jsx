@@ -6,20 +6,33 @@ class MiddleEarth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      good: [],
-      evil: [],
+      good: "",
+      evil: "",
       res: "",
     };
   }
 
   goodVsEvil = () => {
     const { good, evil } = this.state;
+
     let goodVal = good.reduce((a, b) => a + b, 0);
     let evilVal = evil.reduce((a, b) => a + b, 0);
     console.log("goodVal", goodVal);
     console.log("evilVal", evilVal);
-    
-    
+
+    if (goodVal > evilVal) {
+      this.setState({
+        res: "Battle Result: Good triumphs over Evil",
+      });
+    } else if (goodVal < evilVal) {
+      this.setState({
+        res: "Battle Result: Evil eradicates all trace of Good",
+      });
+    } else if (goodVal === evilVal) {
+      this.setState({
+        res: "Battle Result: No victor on this battlefield",
+      });
+    }
   };
 
   handleGood = (e) => {
@@ -70,69 +83,94 @@ class MiddleEarth extends Component {
             side of good, followed by the count of each of the races on the side
             of evil, determine which side wins.
           </h3>
+          <br/>
+          <br/>
+          <h4>The requirements for the inputs on this kata are strange and not at all how I would do it. It takes in the values of "good" and "evil" as stings with each number separated by a single space, instead of an array of numbers, i'll try and find a conversion after I pass the Kata, in other words I'll have it make more sense and provide the code needed for the Kata below the code that I would prefer to use in a real front end application.</h4>
+          <br/>
           <h2> {res ? res : null} </h2>
         </div>
         <div className="contentBox-gve">
           <div className="box-left-gve">
             <h4> Good </h4>
-            <p>
-              {" "}
-              Hobbits{" "}
-              <input
-                type="number"
-                placeholder="Hobbits"
-                onFocusChange={(e) => this.handleGood(e.target.value)}
-              />{" "}
-            </p>
-            <p>
-              {" "}
-              Men{" "}
-              <input
-                type="number"
-                placeholder="Men"
-                onFocusChange={(e) => this.handleGood(e.target.value)}
-              />{" "}
-            </p>
-            <p>
-              {" "}
-              Elves{" "}
-              <input
-                type="number"
-                placeholder="Elves"
-                onFocusChange={(e) => this.handleGood(e.target.value)}
-              />{" "}
-            </p>
-            <p>
-              {" "}
-              Dwarves{" "}
-              <input
-                type="number"
-                placeholder="Dwarves"
-                onFocusChange={(e) => this.handleGood(e.target.value)}
-              />{" "}
-            </p>
-            <p>
-              {" "}
-              Eagles{" "}
-              <input
-                type="number"
-                placeholder="Eagles"
-                onFocusChange={(e) => this.handleGood(e.target.value)}
-              />{" "}
-            </p>
-            <p>
-              {" "}
-              Wizards{" "}
-              <input
-                type="number"
-                placeholder="Wizards"
-                onFocusChange={(e) => this.handleGood(e.target.value)}
-              />{" "}
-            </p>
+            <input type="text" placeholder="Good" />
           </div>
           <div className="box-right-gve">
             <h4> Evil </h4>
-            <p>
+            <input type="text" placeholder="Evil" />
+          </div>
+        </div>
+        <br />
+        <br />
+        <button onClick={() => this.goodVsEvil(good, evil)}>Test</button>
+        <br />
+        <br />
+        <Link to="/">
+          <button> Home </button>
+        </Link>
+      </div>
+    );
+  }
+}
+
+export default MiddleEarth;
+
+// <p>
+//               {" "}
+//               Hobbits{" "}
+//               <input
+//                 type="number"
+//                 placeholder="Hobbits"
+//                 onFocusChange={(e) => this.handleGood(e.target.value)}
+//               />{" "}
+//             </p>
+//             <p>
+//               {" "}
+//               Men{" "}
+//               <input
+//                 type="number"
+//                 placeholder="Men"
+//                 onFocusChange={(e) => this.handleGood(e.target.value)}
+//               />{" "}
+//             </p>
+//             <p>
+//               {" "}
+//               Elves{" "}
+//               <input
+//                 type="number"
+//                 placeholder="Elves"
+//                 onFocusChange={(e) => this.handleGood(e.target.value)}
+//               />{" "}
+//             </p>
+//             <p>
+//               {" "}
+//               Dwarves{" "}
+//               <input
+//                 type="number"
+//                 placeholder="Dwarves"
+//                 onFocusChange={(e) => this.handleGood(e.target.value)}
+//               />{" "}
+//             </p>
+//             <p>
+//               {" "}
+//               Eagles{" "}
+//               <input
+//                 type="number"
+//                 placeholder="Eagles"
+//                 onFocusChange={(e) => this.handleGood(e.target.value)}
+//               />{" "}
+//             </p>
+//             <p>
+//               {" "}
+//               Wizards{" "}
+//               <input
+//                 type="number"
+//                 placeholder="Wizards"
+//                 onFocusChange={(e) => this.handleGood(e.target.value)}
+//               />{" "}
+//             </p>
+
+{
+  /* <p>
               {" "}
               Orcs <input type="number" placeholder="Orcs" />{" "}
             </p>
@@ -159,21 +197,5 @@ class MiddleEarth extends Component {
             <p>
               {" "}
               Wizards <input type="number" placeholder="Wizards" />{" "}
-            </p>
-          </div>
-        </div>
-
-        <br />
-        <br />
-        <button onClick={() => this.goodVsEvil(good, evil)}>Test</button>
-        <br />
-        <br />
-        <Link to="/">
-          <button> Home </button>
-        </Link>
-      </div>
-    );
-  }
+            </p> */
 }
-
-export default MiddleEarth;
