@@ -14,9 +14,52 @@ class MiddleEarth extends Component {
 
   goodVsEvil = () => {
     const { good, evil } = this.state;
+    console.log("good", good, "evil", evil);
+    let goodArr = good.split(" ");
+    let evilArr = evil.split(" ");
+    let gt = []
+    let et = []
 
-    let goodVal = good.reduce((a, b) => a + b, 0);
-    let evilVal = evil.reduce((a, b) => a + b, 0);
+    gt.push(+goodArr[0])
+    if (goodArr[1]){
+      gt.push(+goodArr[1] * 2) 
+    } else gt.push(0)
+    if (goodArr[2]){
+      gt.push(+goodArr[2] * 3) 
+    } else gt.push(0)
+    if (goodArr[3]){
+      gt.push(+goodArr[3] * 3) 
+    } else gt.push(0)
+    if (goodArr[4]){
+      gt.push(+goodArr[4] * 4) 
+    } else gt.push(0)
+    if (goodArr[5]){
+      gt.push(+goodArr[5] * 10) 
+    } else gt.push(0)
+
+    et.push(+evilArr[0])
+    if (evilArr[1]){
+      et.push(+evilArr[1] * 2) 
+    } else et.push(0)
+    if (evilArr[2]){
+      et.push(+evilArr[2] * 2) 
+    } else et.push(0)
+    if (evilArr[3]){
+      et.push(+evilArr[3] * 2) 
+    } else et.push(0)
+    if (evilArr[4]){
+      et.push(+evilArr[4] * 3) 
+    } else et.push(0)
+    if (evilArr[5]){
+      et.push(+evilArr[5] * 5) 
+    } else et.push(0)
+    if (evilArr[6]){
+      et.push(+evilArr[6] * 10) 
+    } else et.push(0)
+
+    console.log(gt, et);
+    let goodVal = gt.reduce((a, b) => a + b, 0);
+    let evilVal = et.reduce((a, b) => a + b, 0);
     console.log("goodVal", goodVal);
     console.log("evilVal", evilVal);
 
@@ -35,15 +78,14 @@ class MiddleEarth extends Component {
     }
   };
 
-  handleGood = (e) => {
-    if (!e) {
-      let val = 0;
-      this.state.good.push(val);
-    } else if (e) {
-      let val = e;
-      this.state.good.push(val);
-    }
-    console.log(this.state.good);
+  goodFn =(good)=>{
+
+  }
+
+  handleChange = (key, value) => {
+    this.setState({
+      [key]: value,
+    });
   };
 
   handleKeyPress = (event) => {
@@ -69,12 +111,14 @@ class MiddleEarth extends Component {
             be involved. Each race has a certain worth when battling against
             others.
             <br />
+            <br />
             On the side of good we have the following races, with their
             associated worth: Hobbits: 1, Men: 2, Elves: 3, Dwarves: 3, Eagles:
             4, Wizards: 10
             <br />
-            On the side of evil we have: Orcs: 1 Men: 2 Wargs: 2 Goblins: 2 Uruk
-            Hai: 3 Trolls: 5 Wizards: 10
+            On the side of evil we have: Orcs: 1, Men: 2, Wargs: 2, Goblins: 2,
+            Uruk Hai: 3, Trolls: 5, Wizards: 10
+            <br />
             <br />
             Although weather, location, supplies and valor play a part in any
             battle, if you add up the worth of the side of good and compare it
@@ -83,20 +127,38 @@ class MiddleEarth extends Component {
             side of good, followed by the count of each of the races on the side
             of evil, determine which side wins.
           </h3>
-          <br/>
-          <br/>
-          <h4>The requirements for the inputs on this kata are strange and not at all how I would do it. It takes in the values of "good" and "evil" as stings with each number separated by a single space, instead of an array of numbers, i'll try and find a conversion after I pass the Kata, in other words I'll have it make more sense and provide the code needed for the Kata below the code that I would prefer to use in a real front end application.</h4>
-          <br/>
+          <br />
+          <br />
+          <h4>
+            The requirements for the inputs on this kata are strange and not at
+            all how I would do it. It takes in the values of "good" and "evil"
+            as stings with each number separated by a single space, with no
+            commas, instead of an array of numbers, i'll try and find a
+            conversion after I pass the Kata, in other words I'll have it make
+            more sense and provide the code needed for the Kata below the code
+            that I would prefer to use in a real front end application.
+          </h4>
+          <br />
           <h2> {res ? res : null} </h2>
         </div>
         <div className="contentBox-gve">
           <div className="box-left-gve">
             <h4> Good </h4>
-            <input type="text" placeholder="Good" />
+            <p>Hobbits, Men, Elves, Dwarves, Eagles, Wizards</p>
+            <input
+              type="text"
+              placeholder="Good"
+              onChange={(e) => this.handleChange("good", e.target.value)}
+            />
           </div>
           <div className="box-right-gve">
             <h4> Evil </h4>
-            <input type="text" placeholder="Evil" />
+            <p>Orcs, Men, Wargs, Goblins, Uruk Hai, Trolls, Wizards</p>
+            <input
+              type="text"
+              placeholder="Evil"
+              onChange={(e) => this.handleChange("evil", e.target.value)}
+            />
           </div>
         </div>
         <br />
