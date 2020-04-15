@@ -7,7 +7,7 @@ import LettersToNumbers from './components/katas/complete/LettersToNumbers';
 import SquareDigits from './components/katas/complete/SquareDigits'
 import Narcissism from './components/katas/complete/Narcissistic';
 import WordSpinner from './components/katas/complete/WordSpinner';
-import MiddleEarth from './components/katas/incomplete/good-vs-evil/GoodVEvil';
+import MiddleEarth from './components/katas/complete/good-vs-evil/GoodVEvil';
 import MorseDecoder from './components/katas/incomplete/MorseCode';
 
 export default (
