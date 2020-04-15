@@ -63,24 +63,20 @@ class MiddleEarth extends Component {
     console.log("goodVal", goodVal);
     console.log("evilVal", evilVal);
 
-    if (goodVal > evilVal) {
+    if (+goodVal > +evilVal) {
       this.setState({
         res: "Battle Result: Good triumphs over Evil",
       });
-    } else if (goodVal < evilVal) {
+    } else if (+goodVal < +evilVal) {
       this.setState({
         res: "Battle Result: Evil eradicates all trace of Good",
       });
-    } else if (goodVal === evilVal) {
+    } else if (+goodVal === +evilVal) {
       this.setState({
         res: "Battle Result: No victor on this battlefield",
       });
     }
   };
-
-  goodFn =(good)=>{
-
-  }
 
   handleChange = (key, value) => {
     this.setState({
