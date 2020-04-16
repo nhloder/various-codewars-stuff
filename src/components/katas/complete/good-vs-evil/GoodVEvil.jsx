@@ -73,7 +73,7 @@ class MiddleEarth extends Component {
       });
     } else if (+goodVal === +evilVal) {
       this.setState({
-        res: "Battle Result: No victor on this battlefield",
+        res: "Battle Result: No victor on this battle field",
       });
     }
   };
@@ -171,89 +171,3 @@ class MiddleEarth extends Component {
 }
 
 export default MiddleEarth;
-
-// <p>
-//               {" "}
-//               Hobbits{" "}
-//               <input
-//                 type="number"
-//                 placeholder="Hobbits"
-//                 onFocusChange={(e) => this.handleGood(e.target.value)}
-//               />{" "}
-//             </p>
-//             <p>
-//               {" "}
-//               Men{" "}
-//               <input
-//                 type="number"
-//                 placeholder="Men"
-//                 onFocusChange={(e) => this.handleGood(e.target.value)}
-//               />{" "}
-//             </p>
-//             <p>
-//               {" "}
-//               Elves{" "}
-//               <input
-//                 type="number"
-//                 placeholder="Elves"
-//                 onFocusChange={(e) => this.handleGood(e.target.value)}
-//               />{" "}
-//             </p>
-//             <p>
-//               {" "}
-//               Dwarves{" "}
-//               <input
-//                 type="number"
-//                 placeholder="Dwarves"
-//                 onFocusChange={(e) => this.handleGood(e.target.value)}
-//               />{" "}
-//             </p>
-//             <p>
-//               {" "}
-//               Eagles{" "}
-//               <input
-//                 type="number"
-//                 placeholder="Eagles"
-//                 onFocusChange={(e) => this.handleGood(e.target.value)}
-//               />{" "}
-//             </p>
-//             <p>
-//               {" "}
-//               Wizards{" "}
-//               <input
-//                 type="number"
-//                 placeholder="Wizards"
-//                 onFocusChange={(e) => this.handleGood(e.target.value)}
-//               />{" "}
-//             </p>
-
-{
-  /* <p>
-              {" "}
-              Orcs <input type="number" placeholder="Orcs" />{" "}
-            </p>
-            <p>
-              {" "}
-              Men <input type="number" placeholder="Men" />{" "}
-            </p>
-            <p>
-              {" "}
-              Wargs <input type="number" placeholder="Wargs" />{" "}
-            </p>
-            <p>
-              {" "}
-              Goblins <input type="number" placeholder="Goblins" />{" "}
-            </p>
-            <p>
-              {" "}
-              Uruk Hai <input type="number" placeholder="Uruk Hai" />{" "}
-            </p>
-            <p>
-              {" "}
-              Trolls <input type="number" placeholder="Trolls" />{" "}
-            </p>
-            <p>
-              {" "}
-              Wizards <input type="number" placeholder="Wizards" />{" "}
-            </p> */
-}
