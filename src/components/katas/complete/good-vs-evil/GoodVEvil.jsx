@@ -124,6 +124,7 @@ class MiddleEarth extends Component {
             of evil, determine which side wins.
           </h3>
           <br />
+          <h2>Note:</h2>
           <br />
           <h4>
             The requirements for the inputs on this kata are strange and not at

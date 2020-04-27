@@ -35,7 +35,7 @@ function Home() {
         <button>Middle Earth</button>
       </Link>
       <br />
-      <Link to="/MorseDecoder">
+      <Link to="/morse">
         <button> Morse Decoder </button>
       </Link>
     </div>

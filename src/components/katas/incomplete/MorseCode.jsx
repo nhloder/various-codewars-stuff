@@ -31,7 +31,7 @@ class MorseDecoder extends Component {
       <div>
         <p>Kata: https://www.codewars.com/kata/54b724efac3d5402db00065e/train/javascript </p>
         <h1> Decode the Morse Code </h1>
-        <h3> `Takes in Morse code (as ASCII inputs " . - ") `</h3>
+        <h3> Takes in Morse code (as ASCII inputs " . - ") and translates it into regular english. </h3>
         <input
           type="text"
           onChange={e => this.handleChange("morse", e.target.value)}
